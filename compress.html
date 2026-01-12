@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compress Image to 20KB / 50KB / 100KB (Free)</title>
+  <meta name="description" content="Compress images instantly to 20KB, 50KB, or 100KB. Works in your browser. No uploads." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="./">
+        <div class="logo"></div>
+        <div>ToolHub</div>
+      </a>
+      <div class="nav-links">
+        <a class="chip" href="./compress.html">Image Compressor</a>
+        <a class="chip" href="./invoice.html">Invoice Generator</a>
+        <a class="chip" href="./salary.html">Salary Calculator</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1 class="h1">Compress Image to 20KB / 50KB / 100KB</h1>
+      <p class="sub">
+        Works directly in your browser (privacy-friendly). Upload → compress → download.
+      </p>
+
+      <div style="margin-top:14px" class="ad">
+        Ad Slot (Top - Responsive)
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card" style="grid-column: span 12">
+        <h2>1) Upload image</h2>
+        <p style="margin-bottom:12px;color:var(--muted)">
+          JPG/PNG supported. Nothing is uploaded to a server.
+        </p>
+
+        <input class="input" id="file" type="file" accept="image/*" />
+
+        <div style="margin-top:14px" class="grid">
+          <div class="card" style="grid-column: span 4">
+            <label>Target size</label>
+            <select class="input" id="target">
+              <option value="20">20 KB</option>
+              <option value="50" selected>50 KB</option>
+              <option value="100">100 KB</option>
+              <option value="200">200 KB</option>
+            </select>
+          </div>
+
+          <div class="card" style="grid-column: span 4">
+            <label>Max width (px)</label>
+            <input class="input" id="maxWidth" type="number" value="1200" min="200" step="50" />
+            <small>Lower width = smaller size</small>
+          </div>
+
+          <div class="card" style="grid-column: span 4">
+            <label>Output format</label>
+            <select class="input" id="format">
+              <option value="image/jpeg" selected>JPG (best compression)</option>
+              <option value="image/png">PNG</option>
+              <option value="image/webp">WEBP</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="row">
+          <button class="btn" id="compressBtn">Compress Now</button>
+          <button class="btn2" id="resetBtn">Reset</button>
+        </div>
+
+        <div id="status" style="margin-top:12px;color:var(--muted)"></div>
+      </div>
+
+      <div class="card" style="grid-column: span 12">
+        <h2>2) Preview + Download</h2>
+        <p style="color:var(--muted)">You’ll see your compressed image here.</p>
+
+        <div class="grid" style="margin-top:12px">
+          <div class="card" style="grid-column: span 6">
+            <h2 style="font-size:16px;margin-bottom:10px">Original</h2>
+            <div id="origMeta" style="color:var(--muted);font-size:13px;margin-bottom:10px">—</div>
+            <img id="origImg" alt="" style="width:100%;border-radius:16px;display:none;border:1px solid var(--border)" />
+          </div>
+
+          <div class="card" style="grid-column: span 6">
+            <h2 style="font-size:16px;margin-bottom:10px">Compressed</h2>
+            <div id="newMeta" style="color:var(--muted);font-size:13px;margin-bottom:10px">—</div>
+            <img id="newImg" alt="" style="width:100%;border-radius:16px;display:none;border:1px solid var(--border)" />
+
+            <div style="margin-top:12px" class="row">
+              <a class="btn" id="downloadBtn" href="#" download style="display:none">Download</a>
+              <button class="btn2" id="copySizeBtn" style="display:none">Copy size</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad" style="grid-column: span 12">
+        Ad Slot (Footer - Responsive)
+      </div>
+    </div>
+
+    <div class="footer">
+      Tip: For strict 20KB limits, reduce max width to 800px and use JPG format.
+    </div>
+  </div>
+
+  <script src="assets/compress.js"></script>
+</body>
+</html>

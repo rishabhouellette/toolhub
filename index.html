@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ToolHub — Free Instant Tools</title>
+  <meta name="description" content="Free tools: Compress images, generate invoices, and calculate salary instantly." />
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="./">
+        <div class="logo"></div>
+        <div>ToolHub</div>
+      </a>
+      <div class="nav-links">
+        <a class="chip" href="./compress.html">Image Compressor</a>
+        <a class="chip" href="./invoice.html">Invoice Generator</a>
+        <a class="chip" href="./salary.html">Salary Calculator</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1 class="h1">Free tools that solve problems in seconds.</h1>
+      <p class="sub">
+        Mobile-first. No signup. Privacy-friendly. Built to help you complete tasks fast.
+      </p>
+
+      <div class="kpi">
+        <div class="badge">✅ Instant Results</div>
+        <div class="badge">✅ Free Forever</div>
+        <div class="badge">✅ Works on Mobile</div>
+      </div>
+
+      <div style="margin-top:16px" class="ad">
+        Ad Slot (Top - Responsive)
+      </div>
+    </div>
+
+    <div class="grid">
+      <a class="card" style="grid-column: span 12" href="./compress.html">
+        <h2>🗜️ Compress Image to 20KB / 50KB / 100KB</h2>
+        <p>Perfect for government forms and job applications. Compression happens in your browser.</p>
+        <div style="margin-top:12px" class="row">
+          <span class="btn">Open Tool →</span>
+          <span class="btn2">No Uploads</span>
+        </div>
+      </a>
+
+      <a class="card" style="grid-column: span 12" href="./invoice.html">
+        <h2>🧾 Invoice / Quotation Generator (PDF)</h2>
+        <p>Create professional invoices instantly. Add items + tax + discount and download PDF.</p>
+        <div style="margin-top:12px" class="row">
+          <span class="btn">Generate →</span>
+          <span class="btn2">Freelancer-Friendly</span>
+        </div>
+      </a>
+
+      <a class="card" style="grid-column: span 12" href="./salary.html">
+        <h2>💰 Salary Calculator</h2>
+        <p>Convert hourly ↔ monthly ↔ annual salary in one click. Built for US/EU search traffic.</p>
+        <div style="margin-top:12px" class="row">
+          <span class="btn">Calculate →</span>
+          <span class="btn2">High RPM</span>
+        </div>
+      </a>
+
+      <div class="card" style="grid-column: span 12">
+        <h2>🔒 Privacy Note</h2>
+        <p>
+          We don’t ask for logins. For tools like image compression, processing happens locally in your browser.
+        </p>
+      </div>
+
+      <div class="ad" style="grid-column: span 12">
+        Ad Slot (Footer - Responsive)
+      </div>
+    </div>
+
+    <div class="footer">
+      © <span id="year"></span> ToolHub — Built for speed.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
