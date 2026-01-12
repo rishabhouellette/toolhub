@@ -19,6 +19,9 @@ const newMeta = $("newMeta");
 
 const downloadBtn = $("downloadBtn");
 const copySizeBtn = $("copySizeBtn");
+const copyLinkBtn = $("copyLinkBtn");
+const shareBtn = $("shareBtn");
+const viralCta = $("viralCta");
 
 let originalFile = null;
 let originalBitmap = null;
@@ -42,6 +45,9 @@ function resetAll() {
 
   downloadBtn.style.display = "none";
   copySizeBtn.style.display = "none";
+  copyLinkBtn.style.display = "none";
+  shareBtn.style.display = "none";
+  viralCta.style.display = "none";
   downloadBtn.href = "#";
   downloadBtn.download = "";
 
@@ -215,6 +221,9 @@ compressBtn.addEventListener("click", async () => {
     downloadBtn.download = outName;
     downloadBtn.style.display = "inline-flex";
     copySizeBtn.style.display = "inline-flex";
+    copyLinkBtn.style.display = "inline-flex";
+    shareBtn.style.display = "inline-flex";
+    viralCta.style.display = "block";
 
     copySizeBtn.onclick = async () => {
       try {
@@ -241,6 +250,36 @@ compressBtn.addEventListener("click", async () => {
 
 resetBtn.addEventListener("click", () => {
   resetAll();
+});
+
+copyLinkBtn.addEventListener("click", async () => {
+  const url = window.location.href;
+  try {
+    await navigator.clipboard.writeText(url);
+    setStatus("Tool link copied ✅");
+    setTimeout(() => setStatus(""), 1500);
+  } catch {
+    setStatus("Could not copy link.");
+  }
+});
+
+shareBtn.addEventListener("click", async () => {
+  const url = window.location.href;
+  try {
+    if (navigator.share) {
+      await navigator.share({
+        title: document.title,
+        text: "Compress image instantly (20KB/50KB/100KB)",
+        url
+      });
+    } else {
+      await navigator.clipboard.writeText(url);
+      setStatus("Share not supported — link copied ✅");
+      setTimeout(() => setStatus(""), 1500);
+    }
+  } catch (e) {
+    // user cancelled share etc
+  }
 });
 
 resetAll();
