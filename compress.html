@@ -170,6 +170,21 @@
     </div>
   </div>
 
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">© <span id="year"></span> ToolHub — Built for speed.</div>
+      <div class="footer-links">
+        <a href="./about.html">About</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="assets/compress.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
